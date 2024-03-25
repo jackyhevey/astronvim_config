@@ -24,7 +24,7 @@ return {
     autochdir = false,
     list = true,
     showbreak = "↪ ",
-    timeoutlen = 150,
+    timeoutlen = 300,
     title = true,
     titlestring = "%<%F%=%l/%L - nvim",
     listchars = {
