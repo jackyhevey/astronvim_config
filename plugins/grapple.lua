@@ -9,16 +9,13 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   cmd = { "Grapple" },
   keys = {
-    { prefix .. "a", "<cmd>GrappleTag<CR>", desc = "Add file" },
-    { prefix .. "d", "<cmd>GrappleUntag<CR>", desc = "Remove file" },
-    { prefix .. "t", "<cmd>GrappleToggle<CR>", desc = "Toggle a file" },
-    { prefix .. "e", "<cmd>GrapplePopup tags<CR>", desc = "Select from tags" },
-    { prefix .. "s", "<cmd>GrapplePopup scopes<CR>", desc = "Select a project scope" },
-    { prefix .. "x", "<cmd>GrappleReset<CR>", desc = "Clear tags from current project" },
-    { "<C-n>", "<cmd>GrappleCycle forward<CR>", desc = "Select next tag" },
-    { "<C-p>", "<cmd>GrappleCycle backward<CR>", desc = "Select previous tag" },
+    { prefix .. "t", "<cmd>Grapple toggle<CR>", desc = "Toggle a file" },
+    { prefix .. "e", "<cmd>Grapple toggle_tags<CR>", desc = "Select from tags" },
+    { prefix .. "s", "<cmd>Grapple toggle_scopes<CR>", desc = "Select a project scope" },
+    { "<C-n>", "<cmd>Grapple cycle forward<CR>", desc = "Select next tag" },
+    { "<C-p>", "<cmd>Grapple cycle backward<CR>", desc = "Select previous tag" },
   },
   opts = function(_, opts)
-    opts.scope = require("grapple").resolvers.git_branch
+    opts.scope = "git_branch"
   end
 }
